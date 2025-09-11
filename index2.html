@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café Bruma – Tu rincón de aroma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdf6f0;
+      color: #3e3e3e;
+    }
+    header {
+      background: #6F4E37;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+	  background:green;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #6f4e37;
+      margin-top: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #6f4e37;
+      margin: 0.5rem auto;
+      border-radius: 2px;
+    }
+	.s{
+		background: #6F4E37;
+		color:white;
+		padding:2%;
+	}
+	h4{
+		color: gold;
+	}
+    .gallery img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-top: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+    .products table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .products th, .products td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .products th {
+      background: #f0e6dc;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      background: #f0e6dc;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat h3 {
+      font-size: 2rem;
+      margin: 0;
+      color: #6f4e37;
+    }
+    .stat p {
+      margin: 0.5rem 0 0;
+    }
+    .contact, .countdown {
+      background: #d9c2b0;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #6f4e37;
+      color: white;
+      margin-top: 2rem;
+    }
+    a {
+      color: #6f4e37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    button {
+      background-color: #6f4e37;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    button:hover {
+      background-color: #8b5e3c;
+    }
+  </style>
+</head>
+<body>
+
+	<!-- Cartel de cookies bloqueante -->
+<div id="cookie-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; display:flex; justify-content:center; align-items:center;">
+  <div style="background:#101013; color:#fff; padding:2rem; border-radius:12px; max-width:500px; text-align:center;">
+    <h2>🍪 Aviso de Cookies</h2>
+    <p style="margin-top:1rem;">
+      Esta web utiliza únicamente cookies técnicas necesarias para el funcionamiento y experiencia.  
+      No se activará ningún almacenamiento sin tu consentimiento.  
+    </p>
+    <p style="margin-top:1rem;">
+      Al aceptar, permites que se guarden datos básicos en tu navegador.  
+      Si rechazas, por nuestra parte no se almacenará nada y serás redirigido fuera de la web.
+    </p>
+	 <p style="margin-top:1rem;">
+    Puedes consultar nuestra <a href="politica-privacidadcookies.html" style="color:#e11d48; text-decoration:underline;">Política de Privacidad y Cookies</a> para más información.
+    </p>
+    <div style="margin-top:2rem;">
+      <button onclick="aceptarCookies()" style="margin-right:1rem; background:#22c55e; border:none; color:#fff; padding:.6rem 1.2rem; border-radius:6px; cursor:pointer;">Aceptar</button>
+      <button onclick="rechazarCookies()" style="background:#e11d48; border:none; color:#fff; padding:.6rem 1.2rem; border-radius:6px; cursor:pointer;">Rechazar</button>
+    </div>
+  </div>
+</div>
+<script>
+  function aceptarCookies() {
+    localStorage.setItem('kalcifer_cookies_aceptadas', 'true');
+    document.getElementById('cookie-overlay').style.display = 'none';
+    // Aquí puedes cargar funciones que dependan del consentimiento
+    loadCartPage(); // ← si quieres que el carrito se cargue solo tras aceptar
+  }
+
+  function rechazarCookies() {
+    localStorage.removeItem('kalcifer_cookies_aceptadas');
+    window.location.href = "https://www.google.com";
+  }
+
+  window.onload = function() {
+    if (!localStorage.getItem('kalcifer_cookies_aceptadas')) {
+      document.getElementById('cookie-overlay').style.display = 'flex';
+    } else {
+      document.getElementById('cookie-overlay').style.display = 'none';
+      loadCartPage(); // ← si quieres que se cargue directamente si ya aceptó
+    }
+  };
+</script>
+<header>
+  <img src="logob.jpg" alt="Logo Café Bruma" width="120">
+
+  <p>Tu rincón de aroma y diseño en Girona</p>
+</header>
+
+<section>
+  <div class="countdown">
+    <h2>🎉 Oferta especial</h2>
+    <p>¡Lanzamos nuestro café edición limitada en:</p>
+    <h3 id="timer">365 días</h3>
+  </div>
+<div style="background-color: #F8F1EC; padding: 20px; border-radius: 10px; max-width: 600px; margin: 0 auto; text-align: center; font-family: sans-serif;">
+  <h2 style="color: #6F4E37;">📍 ¿Dónde estamos?</h2>
+  <p style="font-size: 16px;">📌 <strong>Carrer de les Flors, 12 – Girona</strong></p>
+  <p style="font-size: 16px;">🕒 <strong>Lunes a sábado · 8:00 a 19:00</strong></p>
+  <p style="font-size: 16px;">📞 <strong>Tel:</strong> 612 345 678 · 📧 <strong>Email:</strong> hola@cafebruma.es</p>
+</div>
+<h2 style="text-align: center; color: #6F4E37;">🛍️ Nuestra tienda</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 20px; font-family: sans-serif; background-color: #F8F1EC; border-radius: 10px;">
+
+  <!-- Producto 1 -->
+  <div style="width: 280px; background-color: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; padding: 15px;">
+    <img src="h4.jpg" alt="Café Bruma Clásico" style="width: 100%; border-radius: 8px;">
+    <h3 style="color: #6F4E37;">Café Bruma Clásico</h3>
+    <p>Mezcla suave 100% arábica</p>
+    <p style="font-weight: bold;">8,50 €</p>
+  </div>
+
+  <!-- Producto 2 -->
+  <div style="width: 280px; background-color: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; padding: 15px;">
+    <img src="h5.jpg" alt="Taza cerámica artesanal" style="width: 100%; border-radius: 8px;">
+    <h3 style="color: #6F4E37;">Taza cerámica</h3>
+    <p>Hecha a mano por artesanos locales</p>
+    <p style="font-weight: bold;">12,00 €</p>
+  </div>
+
+  <!-- Producto 3 -->
+  <div style="width: 280px; background-color: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; padding: 15px;">
+    <img src="h6.jpg" alt="Pack regalo Aroma" style="width: 100%; border-radius: 8px;">
+    <h3 style="color: #6F4E37;">Pack regalo "Aroma"</h3>
+    <p>2 cafés + taza + postal ilustrada</p>
+    <p style="font-weight: bold;">22,00 €</p>
+  </div>
+
+</div>
+
+
+<h2 style="text-align: center; color: #6F4E37;">📊 Nuestras cifras</h2>
+  <div class="stats">
+    <div class="stat">
+      <h3>+5.000</h3>
+      <p>Cafés servidos</p>
+    </div>
+    <div class="stat">
+      <h3>98%</h3>
+      <p>Clientes satisfechos</p>
+    </div>
+    <div class="stat">
+      <h3>4.9★</h3>
+      <p>Valoración media</p>
+    </div>
+  </div>
+<div class="s">
+  <h4>🌿 Sobre nosotros</h4>
+ <center><p>Café Bruma nace del amor por el café y el diseño. Nuestro local combina estética minimalista con materiales naturales, creando un ambiente cálido y moderno. Trabajamos con tostadores locales y ofrecemos productos sostenibles.</p></center> 
+</div>
+  <h2>👥 Nuestro equipo</h2>
+  <ul>
+    <li>👩‍🍳 <strong>Laura</strong> – Barista y fundadora. Apasionada del café, con formación en barismo y experiencia en diseño de bebidas.</li>
+    <li>🧑‍🎨 <strong>Marc</strong> – Diseñador del local y redes. Creador de la estética visual de Bruma, amante del arte y la arquitectura.</li>
+    <li>👨‍💻 <strong>Nelies</strong> – Desarrollador web. Responsable de la web, tienda online y experiencia digital del cliente.</li>
+  </ul>
+
+  <h2>💬 Opiniones de nuestros clientes</h2>
+  <blockquote>“Un lugar con encanto, café delicioso y atención de 10. ¡Volveré seguro!” – Clara M.</blockquote>
+  <blockquote>“El diseño del local es precioso, y la tarta de zanahoria... brutal.” – Jordi F.</blockquote>
+  <blockquote>“Me encanta el café Bruma Intenso. ¡Es mi ritual de cada mañana!” – Lucía G.</blockquote>
+<h2 style="text-align: center; color: #6F4E37;">
+	
+	
+	
+	<br><br>
+  <u><strong>📬 Suscríbete a nuestra newsletter</strong></u>
+</h2>
+
+<form style="background: #6F4E37; color: white; padding: 20px; border-radius: 10px; max-width: 400px; margin: 0 auto; text-align: center; font-family: sans-serif;">
+  <label for="email" style="display: block; margin-bottom: 10px; font-size: 16px;">Tu correo electrónico:</label>
+  <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required
+         style="padding: 10px; width: 90%; border: none; border-radius: 5px; margin-bottom: 15px; font-size: 15px;">
+  <br>
+  <button type="submit"
+          style="background-color: gold; color: #6F4E37; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+    Suscribirme
+  </button>
+</form>
+
+<br>
+<br>
+<h2>🗺️ ¿Cómo llegar?</h2>
+<p>Estamos en el corazón de Girona. Puedes encontrarnos fácilmente en Google Maps:</p>
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47454.83700430365!2d2.777381714936454!3d41.98037035976552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bae72798c8fdab%3A0xaf3845b6a5296a6f!2sGerona%2C%20Girona!5e0!3m2!1ses!2ses!4v1757530440911!5m2!1ses!2ses" 
+    width="100%" 
+    height="100%" 
+    style="position:absolute; top:0; left:0; border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+    </div>
+<br><br>
+  <h2>📸 Galería</h2>
+  <div class="gallery">
+    <img src="h1.jpg" alt="Café 1">
+    <img src="h2.jpg" alt="Café 2">
+    <img src="h3.jpg" alt="Café 3">
+  </div>
+  
+  
+  <h2 style="text-align: center; color: #6F4E37;">📲 Síguenos</h2>
+<div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 10px;">
+  <a href="https://www.instagram.com/n.elieselies?igsh=MTZrZXk4emo5MnQ0NQ==" target="_blank" style="background-color: #6F4E37; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-family: sans-serif;">
+    📸 Instagram
+  </a>
+  <a href="https://www.whatsapp.com/" target="_blank" style="background-color: #6F4E37; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-family: sans-serif;">
+    💬 WhatsApp
+  </a>
+</div>
+
+</section>
+
+<div class="contact">
+  <h2>¿Te gustaría una web así?</h2>
+  <p>Diseño responsive, tienda básica, estética cuidada y lista para mostrar tu negocio.</p>
+  <p>💸 Desde 80 € · Entrega rápida · Personalizable</p>
+</div>
+
+<footer>
+  <p>© 2025 Café Bruma · Web de ejemplo creada por Nelies Elies</p>
+</footer>
+
+<script>
+  // ⏳ Contador regresivo para la oferta especial
+  const timerElement = document.getElementById("timer");
+  const launchDate = new Date();
+  launchDate.setFullYear(launchDate.getFullYear() + 1);
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = launchDate - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    timerElement.textContent = `${days} días, ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>

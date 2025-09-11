@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>N.Elies – Diseño Web</title>
+  <style>body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.3s ease;
+}
+
+header {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  animation: fadeInDown 1s ease;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease;
+}
+
+section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  animation: fadeIn 1s ease;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.3rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+th {
+  background: #ecf0f1;
+  font-weight: bold;
+}
+
+tr:hover td {
+  background: #f0f8ff;
+}
+
+ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+}
+
+.contact {
+  background: #e74c3c;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.example {
+  background: #dff9fb;
+  padding: 1rem;
+  border-left: 5px solid #3498db;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2c3e50;
+  color: white;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  margin: 1rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #eee;
+}
+
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.carousel img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel-controls {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.carousel-controls button {
+  background: #e11d48;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-controls button:hover {
+  background: #c10c38;
+}
+
+.view-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: #3498db;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.view-button:hover {
+  background: #2980b9;
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>N.elies – Diseño Web para Gente Real</h1>
+  <p>Estudiante de DAM ofreciendo webs sencillas, funcionales y bonitas para artesanos, negocios y emprendedores.</p>
+</header>
+
+<section>
+  <h2>📱 Contacto</h2>
+  <p>Instagram: <a href="https://www.instagram.com/n.elieselies?igsh=MTZrZXk4emo5MnQ0NQ==" target="_blank">@nelieselies</a></p>
+  <p>WhatsApp: <a href="https://wa.me/34623304646" target="_blank">623 304 646</a></p>
+
+  <h2>💼 Tipos de Web</h2>
+  <table>
+    <tr><th>Tipo</th><th>Descripción</th><th>Precio desde</th></tr>
+    <tr><td>Web Single Page</td><td>Una sola página con secciones básicas</td><td>80 €</td></tr>
+    <tr><td>Web Multi Page</td><td>Varias páginas (Inicio, Productos, Contacto...)</td><td>120 €</td></tr>
+    <tr><td>Catálogo sin venta</td><td>Hasta 50 productos sin carrito</td><td>+30–60 €</td></tr>
+    <tr><td>Catálogo con carrito</td><td>Carrito básico sin pasarela compleja</td><td>+40-∞ €</td></tr>
+    <tr><td>Landing Page</td><td>Para eventos o promociones</td><td>70 €</td></tr>
+  </table>
+
+  <div style="background:#28a745; color:#fff; padding:10px 15px; text-align:center; border-radius:5px; max-width:380px; margin:15px auto; font-family:sans-serif; font-size:13px;">
+  Se incluye un <strong>dominio</strong> y un <strong>hosting gratuito aleatorio</strong>.<br>
+  <div style="margin-top:8px; background:#1e7e34; padding:8px; border-radius:4px;">
+    Si prefieres dominio o hosting personalizado, se aplican <strong>----   +30–50 € extra según (.cat/.com/.org...)</strong>.
+  </div>
+</div>
+
+
+  
+  
+  <h2>✅ ¿Qué incluyen mis webs?</h2>
+  <ul>
+    <li>Diseño adaptado a móvil/ordenador/tablet</li>
+    <li>Formulario de contacto funcional</li>
+    <li>Imágenes y colores personalizados</li>
+    <li>Política de privacidad básica</li>
+    <li>Aviso de cookies simple</li>
+    <li>Optimización básica SEO</li>
+    <li>Revisión gratuita antes de publicar</li>
+    <li>Configuración de hosting y dominio (si es el caso, se puede ofertar un domini gratuito con combre aleatorio)</li>
+  </ul>
+
+  <h2>🔐 ¿Qué recibes con tu web?</h2>
+  <ul>
+    <li><strong>Cuenta de Correo exclusiva</strong> creada por mí para tu web (ej. tuempresa.web@coreo.com)</li>
+    <li><strong>Contraseñas y accesos completos</strong> a hosting, panel y gestor de contenidos</li>
+    <li><strong>Copia de seguridad</strong> de la web en tu Google Drive o por email</li>
+    <li><strong>Atención personalizada</strong> por si surge algún problema técnico o duda</li>
+    <li><strong>Manual básico</strong> para editar textos o subir productos si lo necesitas</li>
+    <li><strong>Entrega limpia y transparente</strong>: tú eres el dueño de tu web, sin dependencias ocultas</li>
+  </ul>
+  <p><em>💡 Mi objetivo es que tengas una web funcional, bonita y que puedas gestionar sin complicaciones.</em></p>
+
+  <h2>🧩 Extras opcionales</h2>
+  <table>
+    <tr><th>Extra</th><th>Precio</th><th>Descripción</th></tr>
+    <tr><td>Diseño de logotipo</td><td>15 €</td><td>Logo vectorial simple con revisiones</td></tr>
+    <tr><td>Pasarela de pago (Stripe)</td><td>35 €</td><td>Integración básica para pagos online</td></tr>
+    <tr><td>Mantenimiento mensual</td><td>10-20 €/mes</td><td>Actualizaciones y soporte técnico</td></tr>
+    <tr><td>Revisión adicional</td><td>15 €</td><td>Modificaciones después de la entrega</td></tr>
+    <tr><td>Traducción web</td><td>10-25 €</td><td>Traducción completa a otro idioma</td></tr>
+    <tr><td>Indexación en Google</td><td>20 €</td><td>Envío del sitio a Google Search Console para aparecer en buscadores</td></tr>
+    <tr><td>Google Analytics</td><td>25 €</td><td>Configuración de cuenta y conexión para ver estadísticas de visitas</td></tr>
+  </table>
+
+  <h2>💸 ¿Tienes un presupuesto ajustado?</h2>
+  <p>No te preocupes. Si tienes <strong>50 €, 60 € o lo que puedas</strong>, cuéntamelo y <strong>me adapto a tu presupuesto</strong> para ofrecerte una web funcional y bonita.</p>
+  <p><em>🎯 Prefiero ayudarte con algo sencillo pero útil, que dejarte sin web por falta de recursos.</em></p>
+  <ul>
+    <li>✅ Podemos usar una de mis plantillas</li>
+    <li>✅ Reducir funcionalidades para ajustarnos al precio</li>
+    <li>✅ Entregarte algo básico pero profesional</li>
+    <li>✅ Y si más adelante quieres mejorarla, ¡también lo hago!</li>
+  </ul>
+
+ <h2>🌟 Ejemplo de trabajo</h2>
+
+ <div class="example">
+  <strong>🧪 Proyecto:</strong> Farmacia – Web funcional adaptada al presupuesto del cliente<br>
+  <strong>📦 Tipo:</strong> Básico, pero completo<br>
+  <strong>✨ Incluye:</strong> Diseño responsive para todos los dispositivos, integración con Google Maps, galería de fotos, sección de contacto...<br>
+  <strong>💰 Precio final:</strong> 50 €<br>
+  <a href="https://soft-wisp-7886c7.netlify.app/" target="_blank" class="view-button">🔗 Ver ejemplo de la web</a>
+
+<div class="carousel">
+    <img src="f1.jpg" class="active" />
+	<img src="f2.jpg"/>
+  </div>
+  <div class="carousel-controls">
+    <button onclick="prevSlide()">⟨</button>
+    <button onclick="nextSlide()">⟩</button>
+  </div>
+</div>
+ 
+ 
+ 
+ 
+ <div class="example">
+  <strong>☕ Proyecto:</strong> Café Bruma – Página única para un café con encanto<br>
+  <strong>📦 Tipo:</strong> Single Page básica<br>
+  <strong>✨ Incluye:</strong> Diseño responsive, política de privacidad, aviso de cookies, suscripción a novedades, ubicación en Google Maps, opiniones reales de clientes...<br>
+  <strong>💰 Precio final:</strong> 80 €<br>
+  <a href="https://reliable-mochi-d7954d.netlify.app/" target="_blank" class="view-button">🔗 Ver ejemplo de la web</a>
+
+<div class="carousel">
+    <img src="b1.jpg" class="active" />
+	<img src="b2.jpg"/>
+	<img src="b3.jpg"/>
+	<img src="b4.jpg"/>
+	<img src="b5.jpg"/>
+  </div>
+  <div class="carousel-controls">
+    <button onclick="prevSlide()">⟨</button>
+    <button onclick="nextSlide()">⟩</button>
+  </div>
+</div>
+
+ 
+ 
+ 
+ 
+ <div class="example">
+  <strong>💍 Proyecto:</strong> Kalcifer Joyas – Web catálogo para marca artesanal<br>
+  <strong>📦 Tipo:</strong> Multipágina con catálogo de 20 productos<br>
+  <strong>✨ Incluye:</strong> Diseño responsive, política básica, cookies, carrito sin pasarela (Vinted/Bizum), pedidos gestionados por Gmail personalizado...<br>
+  <strong>💰 Precio final:</strong> 150 €<br>
+  <a href="https://grand-stroopwafel-abbea0.netlify.app" target="_blank" class="view-button">🔗 Ver ejemplo de la web</a>
+
+<div class="carousel">
+    <img src="k1.jpg" class="active" />
+	<img src="k2.jpg"/>
+	<img src="k3.jpg"/>
+	<img src="k4.jpg"/>
+	<img src="k5.jpg"/>
+  </div>
+  <div class="carousel-controls">
+    <button onclick="prevSlide()">⟨</button>
+    <button onclick="nextSlide()">⟩</button>
+  </div>
+  </div>
+  <div class="example">
+  <strong>🚑 Proyecto:</strong> Código Ambulancia – Revista digital y foro especializado<br>
+  <strong>📦 Tipo:</strong> Web multipágina con contenido editorial, foro y zona de descargas<br>
+  <strong>✨ Incluye:</strong> Diseño responsive, política legal avanzada, cookies, optimización SEO, indexación en Google...<br>
+  <strong>💰 Precio final:</strong> 190 €<br>
+  <a href="https://codigoambulancia.es" target="_blank" class="view-button">🔗 Ver ejemplo de la web</a>
+
+<div class="carousel">
+    <img src="c1.jpg" class="active" />
+	<img src="c2.jpg"/>
+	<img src="c3.jpg"/>
+	<img src="c4.jpg"/>
+	<img src="c5.jpg"/>
+  </div>
+  <div class="carousel-controls">
+    <button onclick="prevSlide()">⟨</button>
+    <button onclick="nextSlide()">⟩</button>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.example').forEach(example => {
+    const carousel = example.querySelector('.carousel');
+    const slides = carousel.querySelectorAll('img');
+    const prevBtn = example.querySelector('.carousel-controls button:first-child');
+    const nextBtn = example.querySelector('.carousel-controls button:last-child');
+
+    let currentSlide = 0;
+
+    function showSlide(i) {
+      slides.forEach((img, idx) => {
+        img.classList.remove('active');
+      });
+      slides[i].classList.add('active');
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    showSlide(currentSlide);
+  });
+</script>
+
+</section>
+
+<div class="contact">
+  <h2>¿Te interesa?</h2>
+  <p>Escríbeme por WhatsApp o Instagram y te enseño mis plantillas. ¡Tú solo dime qué quieres mostrar y lo hacemos realidad!</p>
+</div>
+
+<footer>
+  <p>© 2025 N.elies – Diseño Web</p>
+</footer>
+
+</body>
+</html>

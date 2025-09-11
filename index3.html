@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Farmacia Vitalis – Tu salud, nuestra prioridad</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f8ff;
+      color: #333;
+    }
+    header {
+      background: #2e8b57;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #2e8b57;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+    .products table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .products th, .products td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .products th {
+      background: #e0f2e9;
+    }
+    .contact {
+      background: #cce5d4;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2e8b57;
+      color: white;
+      margin-top: 2rem;
+    }
+    a {
+      color: #2e8b57;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    iframe {
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+	<!-- Cartel de cookies bloqueante -->
+<div id="cookie-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; display:flex; justify-content:center; align-items:center;">
+  <div style="background:#101013; color:#fff; padding:2rem; border-radius:12px; max-width:500px; text-align:center;">
+    <h2>🍪 Aviso de Cookies</h2>
+    <p style="margin-top:1rem;">
+      Esta web utiliza únicamente cookies técnicas necesarias para el funcionamiento y experiencia.  
+      No se activará ningún almacenamiento sin tu consentimiento.  
+    </p>
+    <p style="margin-top:1rem;">
+      Al aceptar, permites que se guarden datos básicos en tu navegador.  
+      Si rechazas, por nuestra parte no se almacenará nada y serás redirigido fuera de la web.
+    </p>
+	 <p style="margin-top:1rem;">
+    Puedes consultar nuestra <a href="politica-privacidadcookies.html" style="color:#e11d48; text-decoration:underline;">Política de Privacidad y Cookies</a> para más información.
+    </p>
+    <div style="margin-top:2rem;">
+      <button onclick="aceptarCookies()" style="margin-right:1rem; background:#22c55e; border:none; color:#fff; padding:.6rem 1.2rem; border-radius:6px; cursor:pointer;">Aceptar</button>
+      <button onclick="rechazarCookies()" style="background:#e11d48; border:none; color:#fff; padding:.6rem 1.2rem; border-radius:6px; cursor:pointer;">Rechazar</button>
+    </div>
+  </div>
+</div>
+<script>
+  function aceptarCookies() {
+    localStorage.setItem('kalcifer_cookies_aceptadas', 'true');
+    document.getElementById('cookie-overlay').style.display = 'none';
+    // Aquí puedes cargar funciones que dependan del consentimiento
+    loadCartPage(); // ← si quieres que el carrito se cargue solo tras aceptar
+  }
+
+  function rechazarCookies() {
+    localStorage.removeItem('kalcifer_cookies_aceptadas');
+    window.location.href = "https://www.google.com";
+  }
+
+  window.onload = function() {
+    if (!localStorage.getItem('kalcifer_cookies_aceptadas')) {
+      document.getElementById('cookie-overlay').style.display = 'flex';
+    } else {
+      document.getElementById('cookie-overlay').style.display = 'none';
+      loadCartPage(); // ← si quieres que se cargue directamente si ya aceptó
+    }
+  };
+</script>
+<header>
+  <h1>💊 Farmacia Vitalis</h1>
+  <p>Tu salud, nuestra prioridad en el corazón de Tarragona</p>
+</header>
+
+<section>
+  <h2>📍 ¿Dónde estamos?</h2>
+  <p>Carrer Major, 45 – Tarragona</p>
+  <p>🕒 Lunes a sábado · 9:00 a 20:00</p>
+  <p>📞 Tel: 977 123 456 · 📧 contacto@farmaciavitalis.es</p>
+
+  <h2>🧴 Productos destacados</h2>
+  <div class="products">
+    <table>
+      <tr><th>Producto</th><th>Descripción</th><th>Precio</th></tr>
+      <tr><td>Gel hidroalcohólico</td><td>Formato bolsillo 100 ml</td><td>2,50 €</td></tr>
+      <tr><td>Mascarillas FFP2</td><td>Pack de 5 unidades</td><td>6,00 €</td></tr>
+      <tr><td>Multivitamínico Vitalis</td><td>30 cápsulas</td><td>9,90 €</td></tr>
+    </table>
+  </div>
+
+  <h2>🩺 Servicios</h2>
+  <ul>
+    <li>💉 Vacunación estacional</li>
+    <li>🧪 Test de glucosa y tensión</li>
+    <li>📦 Encargos personalizados</li>
+    <li>🚚 Entrega a domicilio</li>
+  </ul>
+
+  <h2>📸 Galería</h2>
+  <div class="gallery">
+    <img src="f1.jpg" alt="Farmacia 1">
+    <img src="f2.jpg" alt="Farmacia 2">
+    <img src="f3.jpg" alt="Farmacia 3">
+  </div>
+
+  <h2>🗺️ ¿Cómo llegar?</h2>
+  <p>Estamos en el centro de Tarragona. Puedes encontrarnos fácilmente en Google Maps:</p>
+  <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47454.83700430365!2d1.244490!3d41.118882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a1503f3f3f3f3f%3A0x4e6f6f6f6f6f6f6f!2sTarragona!5e0!3m2!1ses!2ses!4v1757530440911!5m2!1ses!2ses" 
+      width="100%" 
+      height="100%" 
+      style="position:absolute; top:0; left:0; border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <h2>📲 Síguenos</h2>
+  <p>Instagram: <a href="https://www.instagram.com/n.elieselies?igsh=MTZrZXk4emo5MnQ0NQ==" target="_blank">@farmaciavitalis</a></p>
+  <p>WhatsApp: <a href="https://www.whatsapp.com/" target="_blank">Enviar mensaje</a></p>
+</section>
+
+<div class="contact">
+  <h2>¿Necesitas una web como esta?</h2>
+  <p>Diseño responsive, estética profesional, catálogo básico y contacto funcional.</p>
+  <p>💸 Precio estimado: 50 € · Entrega rápida · Personalizable</p>
+</div>
+
+<footer>
+  <p>© 2025 Farmacia Vitalis · Web de ejemplo de demostración</p>
+</footer>
+
+</body>
+</html>
